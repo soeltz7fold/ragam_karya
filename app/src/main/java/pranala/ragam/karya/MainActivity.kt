@@ -4,17 +4,22 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import pranala.ragam.karya.pages.TodosView
 import pranala.ragam.karya.ui.theme.RagamKaryaTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        setContentView(R.layout.splash_scr)
+
+
         setContent {
             RagamKaryaTheme {
                 // A surface container using the 'background' color from the theme
@@ -22,7 +27,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+
+                    TodosView()
+//                    SampleView()
                 }
             }
         }
@@ -42,5 +49,17 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 fun GreetingPreview() {
     RagamKaryaTheme {
         Greeting("Android")
+    }
+}
+
+// just try composable
+@Composable
+fun SampleView() {
+    LazyColumn {
+        item {
+            Text(
+                "fugiat veniam minus"
+            )
+        }
     }
 }
