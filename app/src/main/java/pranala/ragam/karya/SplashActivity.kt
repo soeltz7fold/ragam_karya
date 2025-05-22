@@ -24,6 +24,7 @@ class SplashActivity : AppCompatActivity() {
             override fun run() {
                 val int = Intent(applicationContext, MainActivity::class.java)
                 startActivity(int)
+                finish()
             }
         },800)
     }
